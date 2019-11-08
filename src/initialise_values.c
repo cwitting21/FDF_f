@@ -26,5 +26,7 @@ void		initialise_values(t_mlx *ret)
 	ret->endn = 0;
 	ret->data = 0;
 	ret->win = NULL;
+	ret->mlx = NULL;
 	ret->fd = -1;
+	ret->mode = -1;
 }

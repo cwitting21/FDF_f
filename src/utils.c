@@ -32,7 +32,6 @@ t_mlx		*free_mlx_ptr(t_mlx **mlx)
 				free((*mlx)->field[i]);
 				(*mlx)->field[i] = 0;
 			}
-		//free((*mlx)->field);
 	}
 	if ((*mlx)->data)
 	{
@@ -44,13 +43,11 @@ t_mlx		*free_mlx_ptr(t_mlx **mlx)
 		free((*mlx)->img);
 		(*mlx)->img = 0;
 	}
-		//free((*mlx)->img);
 	if ((*mlx)->win)
 	{
 		free((*mlx)->win);
 		(*mlx)->win = 0;
 	}
-		//free((*mlx)->win);
 	if (*mlx && (*mlx)->allocated)
 	{
 		free(*mlx);

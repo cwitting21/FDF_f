@@ -75,14 +75,15 @@ static int		ft_start_init(t_mlx **ret, char **file, char **mode, int *gnl_ret)
 {
 	char	*line;
 
+	
 	if (((*ret = (t_mlx*)malloc(sizeof(t_mlx))) == NULL) ||
 	(((*ret)->mlx = (void*)malloc(sizeof(void))) == NULL))
-		return (2);//display_error(ret, 2)
-	if (!(set_mode(*ret, *mode)))
-		return (4);//display_error(ret, 4)
+		return (2);
 	initialise_values(*ret);
+	if (set_mode(*ret, *mode) == 0)
+		return (4);
 	if ((*gnl_ret = (get_coords(*file, *ret, line))) < 0)
-		return (3);//display_error(ret, 3)
+		return (3);
 	else if (*gnl_ret == 0)
 		return (0);
 	get_scale(*ret);
